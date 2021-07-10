@@ -5,9 +5,8 @@ import uyts
 
 class Melon_to_yt:
     def __init__(self):
-        super().__init__()
         self.code = [
-            'GN0000','DM0000','AB0000'
+            'GN0000','DM0000','AB0000',
             'GN0100','GN0200','GN0300','GN0400','GN0500','GN0600','GN0700','GN0800',
             'GN0900','GN1000','GN1100','GN1200','GN1300','GN1400',
             'GN1500','GN1700','GN1800','GN1900','GN2000','GN2100','GN2200','GN2300','GN2400',
@@ -52,7 +51,7 @@ class Melon_to_yt:
             else : continue
     def get_yt_data(self, time : str, code = 'GN0100') -> list:
         if code in self.code:
-            self.__get_songs_melon_chart_100(time='month', song_code=code)
+            self.__get_songs_melon_chart_100(time=time, song_code=code)
             yt_data = []
             for song in self.songs:
                 yt_data.append(self.__search_yt(song['title']))
@@ -68,7 +67,8 @@ if __name__ == "__main__":
     melon = Melon_to_yt()
     now = datetime.datetime.now()
     day_time = str(now.year) + "{:02d}".format(now.month) + "{:02d}".format(now.day) + "{:02d}".format(now.hour) + '00'
-    video = melon.get_yt_data(time=day_time,code='GN0100')
-    video = melon.get_yt_data(time='day',code='GN0100')
-    video = melon.get_yt_data(time='month',code='GN0100')
-    video = melon.get_yt_data(time='year',code='GN0100')
+    video1 = melon.get_yt_data(time=day_time,code='GN0100')
+    video2 = melon.get_yt_data(time='day',code='GN0100')
+    video3 = melon.get_yt_data(time='month',code='GN0100')
+    video4 = melon.get_yt_data(time='year',code='GN0100')
+    print(video1, video2, video3, video4)
