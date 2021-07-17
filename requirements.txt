@@ -1,0 +1,3 @@
+beautifulsoup4==4.9.3
+unlimited-youtube-search==0.1.2
+requests==2.25.1

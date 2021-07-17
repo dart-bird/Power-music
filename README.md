@@ -10,6 +10,15 @@
 
 ❌ **Genie**
 
+## Simple Example Program
+It is convert music charts to youtube links with power-music melon.
+Youtube link in `id` key
+```py
+import pm
+melon = pm.Controller(time='d',site='melon',song_code='GN0100')
+print(melon.get_ytdata())
+
+```
 ## Melon Music Code Table
 - Synthesis
 
